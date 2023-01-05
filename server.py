@@ -4,10 +4,16 @@ from flask import send_file
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET'])
-def func():
-    print(request.data)
+@app.route('/')
+def root():
     return send_file("index.html")
+
+@app.route('/<path>')
+def func(path):
+    print(request.data)
+    if path != 'favicon.ico':
+        return send_file(path)
+
 
 
 @app.route('/<page>', methods=['POST'])
