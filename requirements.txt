@@ -1,0 +1,10 @@
+scikit-image
+tk
+tensorflow
+keras
+opencv-python
+matplotlib
+pillow
+numpy
+json
+flask
