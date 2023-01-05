@@ -21,7 +21,7 @@ def index(page):
     if page == 'about':
         return send_file("index.html")
     else:
-        print(page)
+        print(request.files.get('image').save(request.files.get('image').name))
         return "lmao"
 
 if __name__ == '__main__':

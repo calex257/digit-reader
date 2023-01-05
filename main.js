@@ -5,7 +5,7 @@ var loadFile = function(event) {
     var reader = new FileReader();
     reader.readAsArrayBuffer(file);
     reader.onload = () => {
-        var arrayBuffer = fileReader.result; 
+        var arrayBuffer = reader.result; 
         socketControl.uploadImage({ 
             name: file.name, 
             type: file.type, 
@@ -14,6 +14,21 @@ var loadFile = function(event) {
         });
     }
 };
+
+document.querySelector('.buton').addEventListener('click', (e) => {  
+    let data = new FormData();
+    let image = document.querySelector("#intrare").files[0];
+    console.log(image)
+    data.append('image', image, "img");
+  
+    fetch('/apiToReceiveImage', {
+      method: 'POST',    
+      body: data
+    }).then(async (_res) => {
+      const result = await _res.json();
+      console.log(result);
+    });
+  });
 
 socket.on("send-image", function(data){
     appendImageMessage(data)
