@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @font-face { font-family: Font; src: url('FONT.TTF'); } 
+      h1 {
+         font-family: Font
+      }
+    </style>
     <title>Tema</title>
     <link rel="stylesheet" href="main.css">
     <link rel="icon" type="image/png" href="learning.png?v=1">
 </head>
 <body>
+    
     <div id="titlu" class="header">
         <h1>Submit a photo</h1>
         <input type="file" id="intrare" placeholder="Introduceti o poza.." accept="image/jpeg, image/png, image/jpg" onchange="loadFile(event)"/>
