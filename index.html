@@ -26,7 +26,8 @@
     
     <div id="titlu" class="header">
         <h1>Submit a photo</h1>
-        <input type="file" id="intrare" placeholder="Introduceti o poza.." accept="image/jpeg, image/png, image/jpg" onchange="loadFile(event)"/>
+        <input type="file" id="intrare" placeholder="Introduceti o poza.." accept="image/jpeg, image/png, image/jpg"
+        onchange="loadFile(event)" capture="environment"/>
         <span class="buton">Submit photo</span>
         <img id="image">
     </div>
