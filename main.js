@@ -27,12 +27,14 @@ document.querySelector('.buton').addEventListener('click', (e) => {
     }).then(async (_res) => {
       const result = await _res.json();
       console.log(result);
+      document.getElementById("raspuns").innerHTML = "Numarul este: " + result["name"];
+      document.getElementById("raspuns").style.display = "block";
+      console.log(document.getElementById("raspuns"))
     });
   });
 
 socket.on("send-image", function(data){
     appendImageMessage(data)
-    getNumar();
 });
 
 function appendImageMessage(data) 

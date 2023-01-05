@@ -15,14 +15,13 @@ def func(path):
         return send_file(path)
 
 
-
 @app.route('/<page>', methods=['POST'])
 def index(page):
     if page == 'about':
         return send_file("index.html")
     else:
-        print(request.files.get('image').save(request.files.get('image').name))
-        return "lmao"
+        print(request.files.get('image').save(request.files.get('image').name + ".png"))
+        return '{\n"name": "Alex"\n}\n'
 
 if __name__ == '__main__':
 
