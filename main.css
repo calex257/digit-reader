@@ -54,3 +54,13 @@ body
     font-size: 18px;
 }
 
+.response
+{
+    color: #FFFFFF;
+    text-align: center;
+    padding: 5px;
+    margin: auto;
+    border: 3px solid #FFFFFF;
+    display: none;
+}
+
