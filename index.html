@@ -4,35 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        @font-face { font-family: Font; src: url('FONT.TTF'); } 
-        h1 {
-            font-family: Font
-        }
-        html, body {
-            margin:0;
-            height:100%;
-            overflow:hidden;
-        }
-        body {
-            background-image: url(background.jpg);
-        }
-    </style>
     <title>Tema</title>
     <link rel="stylesheet" href="main.css">
     <link rel="icon" type="image/png" href="learning.png?v=1">
 </head>
 <body>
-    
-    <div id="titlu" class="header">
-        <h1>Submit a photo</h1>
-        <input type="file" id="intrare" placeholder="Introduceti o poza.." accept="image/jpeg, image/png, image/jpg"
-        onchange="loadFile(event)" capture="environment"/>
-        <span class="buton">Submit photo</span>
-        <img id="image">
+    <div class="header">
+        <div class="info">
+            <h4><a>NEURAL NETWORK</a></h4>
+            <h1>DIGIT READER</h1>
+            <div class="meta">
+                By Andrei Vladut-Nicolae, Calciu Alexandru, Mogodeanu Claudiu, Petrea Andrei
+            </div>
+        </div>
     </div>
-    <div id="raspuns" class="response">
-    </div>   
-    <script src="main.js"></script>
+    <section class="content">
+        <p align="center">Descrierea proiectului</p>
+        <div align="center">
+            <input type="file" id="intrare" placeholder="Introduceti o poza.." accept="image/jpeg, image/png, image/jpg"
+            onchange="loadFile(event)" capture="environment"/>
+            <span class="buton">Submit photo</span>
+            <div id="raspuns" class="response"></div>   
+            <script src="main.js"></script>
+            <img id="image">
+        </div>
+        <p align="center"><a href="https://github.com/calex257/digit-reader" class="btn git" target="_b">GitHub</a></p>      
+    </section>
 </body>
 </html>

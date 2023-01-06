@@ -55,4 +55,4 @@ def get_digit(file_name):
     # print(np.round_(pred * 100, decimals=2))
     return np.round_(pred * 100, decimals=2).argmax()
 
-get_digit("blb2.jpg")
+#get_digit("blb2.jpg")
