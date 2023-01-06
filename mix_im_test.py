@@ -25,8 +25,8 @@ def get_digit(file_name):
 
     # open jpg and convert to png
     image = PIL.Image.open(file_name)
-    # image.save(file_name)
-    # image = PIL.Image.open(file_name)
+    image.save(file_name, format = "png")
+    image = PIL.Image.open(file_name)
 
     # resize the image
     print("size initial" + str(image.size))
@@ -55,4 +55,4 @@ def get_digit(file_name):
     # print(np.round_(pred * 100, decimals=2))
     return np.round_(pred * 100, decimals=2).argmax()
 
-get_digit("blb2.jpg")
+#get_digit("blb2.jpg")
