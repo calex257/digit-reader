@@ -125,7 +125,7 @@ function takepicture() {
     clearphoto();
   }
 }
-
+  let slideIndex;
   document.getElementById("istoric").addEventListener("click", ()=>
   {
     let len= this.files.length;
@@ -150,7 +150,7 @@ function takepicture() {
 		slide.appendChild(number);
 		slideshow.appendChild(slide);
       }
-	  let slideIndex = 1;
+	  slideIndex = 1;
  	  showSlides(slideIndex);
     }
   });
