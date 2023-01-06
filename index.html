@@ -30,9 +30,21 @@
         onchange="loadFile(event)" capture="environment"/>
         <span class="buton">Submit photo</span>
         <img id="image">
+        <div class="camera">
+            <video id="video">Video stream not available.</video>
+            <button id="startbutton">Take photo</button>
+        </div>
+            <canvas id="canvas"> </canvas>
+        <div class="output">
+            <img id="photo" alt="The screen capture will appear in this box." />
+        </div>
     </div>
     <div id="raspuns" class="response">
-    </div>   
+    </div>  
+    <div id="istoric" class="buton">Istoric poze</span>
+    <div class="container"></div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
     <script src="main.js"></script>
 </body>
 </html>
