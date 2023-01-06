@@ -25,8 +25,8 @@ def get_digit(file_name):
 
     # open jpg and convert to png
     image = PIL.Image.open(file_name)
-    image.save(file_name, format = "png")
-    image = PIL.Image.open(file_name)
+    # image.save(file_name, format = "png")
+    # image = PIL.Image.open(file_name)
 
     # resize the image
     print("size initial" + str(image.size))
