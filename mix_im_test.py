@@ -21,12 +21,12 @@ def draw(n):
 
 def get_digit(file_name):
     # load trained model
-    model = keras.models.load_model('first_try.model')
+    model = keras.models.load_model('new_try.h5')
 
     # open jpg and convert to png
     image = PIL.Image.open(file_name)
-    # image.save(file_name)
-    # image = PIL.Image.open(file_name)
+    image.save(file_name, format = "png")
+    image = PIL.Image.open(file_name)
 
     # resize the image
     print("size initial" + str(image.size))
