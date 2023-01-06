@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        @font-face { font-family: Font; src: url('FONT.TTF'); } 
+        @font-face {
+            font-family: Font;
+            src: url('FONT.TTF');
+        }
+
         h1 {
             font-family: Font
         }
-        html, body {
-            margin:0;
-            height:100%;
-            overflow:hidden;
+
+        html,
+        body {
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
         }
+
         body {
             background-image: url(background.jpg);
         }
@@ -22,17 +30,27 @@
     <link rel="stylesheet" href="main.css">
     <link rel="icon" type="image/png" href="learning.png?v=1">
 </head>
+
 <body>
-    
+
     <div id="titlu" class="header">
         <h1>Submit a photo</h1>
         <input type="file" id="intrare" placeholder="Introduceti o poza.." accept="image/jpeg, image/png, image/jpg"
-        onchange="loadFile(event)" capture="environment"/>
+            onchange="loadFile(event)" capture="environment" />
         <span class="buton">Submit photo</span>
         <img id="image">
     </div>
+    <div class="camera">
+        <video id="video">Video stream not available.</video>
+        <button id="startbutton">Take photo</button>
+    </div>
+    <canvas id="canvas"> </canvas>
+    <div class="output">
+        <img id="photo" alt="The screen capture will appear in this box." />
+    </div>
     <div id="raspuns" class="response">
-    </div>   
+    </div>
     <script src="main.js"></script>
 </body>
+
 </html>
