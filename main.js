@@ -34,8 +34,9 @@ let streaming = false;
 
 
 let video = document.getElementById('video');
+console.log(video)
 let canvas = document.getElementById('canvas');
-let photo = document.getElementById('photo');
+let photo = document.getElementById('image');
 let startbutton = document.getElementById('startbutton');
 
 navigator.mediaDevices
