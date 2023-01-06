@@ -37,11 +37,11 @@
 
 .response
 {
-    color: #FFFFFF;
+    color: #000;
     text-align: center;
     padding: 5px;
     margin: auto;
-    border: 3px solid #FFFFFF;
+    border: 3px solid #000;
     display: none;
 }
 @font-face { font-family: Font; src: url('FONT.TTF'); } 
