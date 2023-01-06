@@ -17,6 +17,7 @@ document.querySelector('.buton').addEventListener('click', (e) => {
     console.log(result);
     document.getElementById("raspuns").innerHTML = "Numarul este: " + result["name"];
     document.getElementById("raspuns").style.display = "block";
+
     console.log(document.getElementById("raspuns"))
   });
 });
@@ -125,4 +126,62 @@ function takepicture() {
   }
 }
 
-window.addEventListener("load", startup, false);
+  document.getElementById("istoric").addEventListener("click", ()=>
+  {
+    let len= this.files.length;
+    if(len==0)
+    {
+       return;
+    }
+    else
+    {
+      let slideshow= document.getElementById("container");
+	  slideshow.style.display="block";
+      for(let i=0;i<len;i++)
+	  {
+		let slide= document.createElement("div");
+		slide.className="mySlides";
+		let img= document.createElement("img");
+		let number= document.createElement("div");
+		number.className="numbertext";
+		img.src= this.files[i];
+		img.style.width="100%";
+		number.appendChild(img)
+		slide.appendChild(number);
+		slideshow.appendChild(slide);
+      }
+	  let slideIndex = 1;
+ 	  showSlides(slideIndex);
+    }
+  });
+  
+  
+  function plusSlides(n) 
+  {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) 
+  {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) 
+{
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("demo");
+    let captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+  }
+
