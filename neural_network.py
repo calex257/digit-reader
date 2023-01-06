@@ -75,4 +75,4 @@ print(accuracy)
 print(loss)
 
 # save the model
-model.save('first_try.model')
+model.save('new_try.h5')
