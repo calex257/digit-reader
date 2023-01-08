@@ -1,5 +1,6 @@
 document.getElementById("sectiune").style.textAlign = "center";
-let files =[];
+let files =[], clona=[];
+
 var loadFile = function (event) {
   var image = document.getElementById('image');
   image.src = URL.createObjectURL(event.target.files[0]);
@@ -99,7 +100,7 @@ function takepicture() {
     canvas.style.display = "none"
     const data = canvas.toDataURL("image/png");
     photo.setAttribute("src", data);
-    files.push(photo.src)
+    files.push(photo.src);
     console.log(photo);
     canvas.toBlob((blob) => {
       const reader = new FileReader();
@@ -130,10 +131,12 @@ function takepicture() {
     clearphoto();
   }
 }
-  let slideIndex;
+let slideIndex;
+
   document.getElementById("istoric").addEventListener("click", ()=>
   {
-    let len= files.length;
+    copyVector();
+    let len= clona.length;
     if(len==0)
     {
        return;
@@ -141,18 +144,29 @@ function takepicture() {
     else
     {
       let slideshow= document.getElementById("rezervor");
+      let copii=slideshow.children.length;
+      for(let i=0;i<copii;i++)
+      {
+        if(slideshow.children[i].classList.contains("mySlides"))
+        {
+          slideshow.removeChild(slideshow.children[i]);
+          i--;
+          copii--;
+        }
+      }
 	  slideshow.style.display="block";
       for(let i=0;i<len;i++)
 	  {
       let slide= document.createElement("div");
       slide.className="mySlides";
       let img= document.createElement("img");
-      img.src= files[i];
+      img.src= clona[i];
       img.classList.add("imagineIstoric");
       slide.appendChild(img);
       slideshow.appendChild(slide);
       }
     }
+    files=[];
     slideIndex=1;
     showSlides(slideIndex);
   });
@@ -195,4 +209,13 @@ function takepicture() {
       dots[i].classList.remove("active");
     }
     dots[n-1].classList.add("active");
+  }
+
+
+  function copyVector()
+  {
+    for(let i=0;i<files.length;i++)
+    {
+      clona.push(files[i]);
+    }
   }
