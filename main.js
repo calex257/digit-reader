@@ -152,9 +152,9 @@ function takepicture() {
       slide.appendChild(img);
       slideshow.appendChild(slide);
       }
-	  slideIndex = 1;
- 	  showSlides(slideIndex);
     }
+    slideIndex=1;
+    showSlides(slideIndex);
   });
   
   
@@ -173,6 +173,18 @@ function takepicture() {
     let i;
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
+    if((n>slides.length) || (n<1))
+    {
+      if(n>slides.length)
+      {
+        slideIndex=slides.length;
+      }
+      if(n<1)
+      {
+        slideIndex=1;
+      }
+      return;
+    }
     for(i=0;i<slides.length;i++)
     {
       slides[i].style.display = "none";
@@ -180,8 +192,7 @@ function takepicture() {
     slides[n-1].style.display = "block";
     for(i=0;i<dots.length;i++)
     {
-      dots[i].className = dots[i].className.replace(" active", "");
+      dots[i].classList.remove("active");
     }
-    dots[n-1].className += " active";
+    dots[n-1].classList.add("active");
   }
-
