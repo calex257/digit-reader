@@ -3,6 +3,7 @@
     height: auto;
     display: block;
 }
+
 .buton
 {
     margin-top: 100px;
@@ -207,11 +208,15 @@ a{
 {
     position: relative;
     display: none;
+    width: 400px;
+    height: auto;
 }
   
 .mySlides 
 {
     display: none;
+    width: 400px;
+    height: auto;
 }
   
 .cursor 
@@ -227,7 +232,7 @@ a{
     width: auto;
     padding: 16px;
     margin-top: -50px;
-    color: white;
+    color: black;
     font-weight: bold;
     font-size: 20px;
     border-radius: 0 3px 3px 0;
@@ -284,4 +289,11 @@ a{
 .active,.demo:hover 
 {
     opacity: 1;
+}
+
+.imagineIstoric
+{
+  width: 400px;
+  height: auto;
+  display: block;
 }
