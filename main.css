@@ -2,38 +2,22 @@
     width: 400px;
     height: auto;
     display: block;
+    margin-top: 100px;
 }
 
 .buton
 {
-    margin-top: 100px;
-    align-items: center;
-    appearance: none;
-    background-color: #2f7ead;
-    border-radius: 4px;
-    border-width: 0;
-    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#1b4767 0 -3px 0 inset;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-flex;
-    font-family: Font,monospace;
-    height: 30px;
-    justify-content: center;
-    line-height: 1;
-    list-style: none;
-    overflow: hidden;
-    padding-left: 16px;
-    padding-right: 16px;
-    position: relative;
-    text-align: left;
-    text-decoration: none;
-    transition: box-shadow .15s,transform .15s;
-    user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    will-change: box-shadow,transform;
-    font-size: 18px;
+  color:#333;
+  border:2px solid;
+  border-radius:3px;
+  text-decoration:none;
+  display:inline-block;
+  padding:5px 10px;
+  font-weight:600;
+  max-width: 400px;
+  margin:auto;
+  cursor: pointer;
+  margin-top: 100px;
 }
 
 .response
@@ -44,6 +28,7 @@
     margin: auto;
     border: 3px solid #000;
     display: none;
+    max-width: 400px;
 }
 @font-face { font-family: Font; src: url('FONT.TTF'); } 
 html,body{
@@ -133,6 +118,7 @@ a{
   font-size: x-large;
   background-image:url(background2.jpg);
   background-size: 100%;
+  background-attachment: fixed;
 }
 
 .btn{
@@ -143,6 +129,9 @@ a{
   display:inline-block;
   padding:5px 10px;
   font-weight:600;
+  max-width: 400px;
+  margin:auto;
+  margin-top: 100px;
 }
 
 .git{
@@ -151,7 +140,6 @@ a{
 #video 
 {
     border: 1px solid black;
-    box-shadow: 2px 2px 3px black;
     width: 320px;
     height: 240px;
 }
@@ -173,6 +161,7 @@ a{
 {
     width: 340px;
     display: inline-block;
+    margin-top: 100px;
 }
   
 .output 
@@ -189,12 +178,11 @@ a{
     margin-left: auto;
     margin-right: auto;
     bottom: 32px;
-    background-color: rgba(0, 150, 0, 0.5);
+    background-color: #a6d8f1;
     border: 1px solid rgba(255, 255, 255, 0.7);
-    box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.2);
     font-size: 14px;
-    font-family: "Lucida Grande", "Arial", sans-serif;
-    color: rgba(255, 255, 255, 1);
+    font-family: Font;
+    color: #000;
   }
   
 .contentarea 
