@@ -4,6 +4,7 @@ from flask import send_file
 from mix_im_test import *
 import json
 import base64
+from PIL import Image, ExifTags
 
 app = Flask(__name__)
 
@@ -21,6 +22,27 @@ def func(path):
 def index():
     file_name = request.files.get('image').name + ".png"
     request.files.get('image').save(file_name)
+    try:
+        image=Image.open(file_name)
+
+        for orientation in ExifTags.TAGS.keys():
+            if ExifTags.TAGS[orientation]=='Orientation':
+                break
+        
+        exif = image._getexif()
+
+        if exif[orientation] == 3:
+            image=image.rotate(180, expand=True)
+        elif exif[orientation] == 6:
+            image=image.rotate(270, expand=True)
+        elif exif[orientation] == 8:
+            image=image.rotate(90, expand=True)
+
+        image.save(file_name)
+        image.close()
+    except (AttributeError, KeyError, IndexError):
+        # cases: image doesn't have getexif
+        pass
     num = get_digit(file_name)
     dc ={}
     dc["name"] = str(num)

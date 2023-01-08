@@ -1,6 +1,9 @@
+document.getElementById("sectiune").style.textAlign = "center";
+let files =[];
 var loadFile = function (event) {
   var image = document.getElementById('image');
   image.src = URL.createObjectURL(event.target.files[0]);
+  files.push(image.src);
 };
 
 document.querySelector('.buton').addEventListener('click', (e) => {
@@ -96,6 +99,7 @@ function takepicture() {
     canvas.style.display = "none"
     const data = canvas.toDataURL("image/png");
     photo.setAttribute("src", data);
+    files.push(photo.src)
     console.log(photo);
     canvas.toBlob((blob) => {
       const reader = new FileReader();
@@ -129,31 +133,28 @@ function takepicture() {
   let slideIndex;
   document.getElementById("istoric").addEventListener("click", ()=>
   {
-    let len= this.files.length;
+    let len= files.length;
     if(len==0)
     {
        return;
     }
     else
     {
-      let slideshow= document.getElementById("container");
+      let slideshow= document.getElementById("rezervor");
 	  slideshow.style.display="block";
       for(let i=0;i<len;i++)
 	  {
-		let slide= document.createElement("div");
-		slide.className="mySlides";
-		let img= document.createElement("img");
-		let number= document.createElement("div");
-		number.className="numbertext";
-		img.src= this.files[i];
-		img.style.width="100%";
-		number.appendChild(img)
-		slide.appendChild(number);
-		slideshow.appendChild(slide);
+      let slide= document.createElement("div");
+      slide.className="mySlides";
+      let img= document.createElement("img");
+      img.src= files[i];
+      img.classList.add("imagineIstoric");
+      slide.appendChild(img);
+      slideshow.appendChild(slide);
       }
-	  slideIndex = 1;
- 	  showSlides(slideIndex);
     }
+    slideIndex=1;
+    showSlides(slideIndex);
   });
   
   
@@ -171,18 +172,27 @@ function takepicture() {
 {
     let i;
     let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("demo");
-    let captionText = document.getElementById("caption");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
+    let dots = document.getElementsByClassName("dot");
+    if((n>slides.length) || (n<1))
+    {
+      if(n>slides.length)
+      {
+        slideIndex=slides.length;
+      }
+      if(n<1)
+      {
+        slideIndex=1;
+      }
+      return;
+    }
+    for(i=0;i<slides.length;i++)
+    {
       slides[i].style.display = "none";
     }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+    slides[n-1].style.display = "block";
+    for(i=0;i<dots.length;i++)
+    {
+      dots[i].classList.remove("active");
     }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-    captionText.innerHTML = dots[slideIndex-1].alt;
+    dots[n-1].classList.add("active");
   }
-
