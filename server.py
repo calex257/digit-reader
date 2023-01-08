@@ -40,7 +40,7 @@ def index():
 
         image.save(file_name)
         image.close()
-    except (AttributeError, KeyError, IndexError):
+    except (AttributeError, KeyError, IndexError, TypeError):
         # cases: image doesn't have getexif
         pass
     num = get_digit(file_name)
