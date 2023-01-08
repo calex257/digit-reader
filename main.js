@@ -1,3 +1,5 @@
+document.getElementById("sectiune").style.textAlign = "center";
+
 var loadFile = function (event) {
   var image = document.getElementById('image');
   image.src = URL.createObjectURL(event.target.files[0]);
@@ -34,8 +36,9 @@ let streaming = false;
 
 
 let video = document.getElementById('video');
+console.log(video)
 let canvas = document.getElementById('canvas');
-let photo = document.getElementById('photo');
+let photo = document.getElementById('image');
 let startbutton = document.getElementById('startbutton');
 
 navigator.mediaDevices
@@ -125,7 +128,7 @@ function takepicture() {
     clearphoto();
   }
 }
-
+  let slideIndex;
   document.getElementById("istoric").addEventListener("click", ()=>
   {
     let len= this.files.length;
@@ -150,7 +153,7 @@ function takepicture() {
 		slide.appendChild(number);
 		slideshow.appendChild(slide);
       }
-	  let slideIndex = 1;
+	  slideIndex = 1;
  	  showSlides(slideIndex);
     }
   });

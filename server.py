@@ -14,8 +14,7 @@ def root():
 @app.route('/<path>')
 def func(path):
     print(request.data)
-    if path != 'favicon.ico':
-        return send_file(path)
+    return send_file(path)
 
 
 @app.route('/submitted_photo', methods=['POST'])
@@ -34,7 +33,7 @@ def camera():
     decoded_data = str(request.data)
     print(type(decoded_data))
     file_begin = decoded_data.split(',')[1]
-    decoded_data = base64.decodestring(bytes(file_begin, 'utf-8'))
+    decoded_data = base64.decodebytes(bytes(file_begin, 'utf-8'))
     with open("image1.png", "wb") as f:
         f.write(decoded_data)
     #print(request.data)
