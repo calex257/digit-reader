@@ -21,35 +21,28 @@
         </div>
     </div>
     <section class="content">
-        <p align="center">Descrierea proiectului</p>
+        <p align="center">
+            Since the AI is swiftly making its presence felt in the everyday world, we are trying to observe some of its basic functionalities and catch a glimpse of how it is working in the background.
+            Thus, we are approaching a rather common task in Machine Learning, digit recognition, in the most widely-spread manner: through Supervised Learning.
+        </p>
         <div align="center">
             <input type="file" id="intrare" placeholder="Introduceti o poza.." accept="image/jpeg, image/png, image/jpg"
                 onchange="loadFile(event)" capture="environment" />
             <span class="buton">Submit photo</span>
-            <!-- <div id="raspuns" class="response"></div> -->
+            <p align="center" id="raspuns" class="btn"></p>
             <img id="image" src="wip.jpeg">
             <div class="camera">
                 <video id="video">Video stream not available.</video>
                 <button id="startbutton">Take photo</button>
             </div>
-            <!-- <canvas id="canvas"> </canvas> -->
-            <!-- <div class="output">
-                <img id="photo" alt="The screen capture will appear in this box." />
-                <div class="camera">
-                    <video id="video">Video stream not available.</video>
-                    <button id="startbutton">Take photo</button>
-                </div>
-            </div> -->
         </div>
         <canvas id="canvas"> </canvas>
-        <div id="raspuns" class="response">
-        </div>
-        <div id="istoric" class="buton">Istoric poze</span>
+        <span align="center" id="istoric" class="buton">Istoric poze</span>
             <div class="container"></div>
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            <p align="center"><a href="https://github.com/calex257/digit-reader" class="btn git" target="_b">GitHub</a>
-            </p>
+        </div>
+        <p align="center"><a href="https://github.com/calex257/digit-reader" class="btn git" target="_b">GitHub</a></p>
     </section>
     <script defer src="main.js"></script>
 </body>
