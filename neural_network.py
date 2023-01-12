@@ -8,8 +8,6 @@ from keras.layers import Dense
 from keras.activations import linear, relu, sigmoid
 import matplotlib.pyplot as plt
 from PIL import ImageGrab, Image
-from tkinter import *
-import tkinter as tk
 
 from keras.datasets import mnist
 (X_train, y_train), (X_test, y_test) = mnist.load_data()

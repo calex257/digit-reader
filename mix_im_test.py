@@ -9,8 +9,6 @@ from keras.activations import linear, relu, sigmoid
 import matplotlib.pyplot as plt
 import PIL
 from PIL import Image
-from tkinter import *
-import tkinter as tk
 import cv2
 from skimage import io, exposure, data
 
