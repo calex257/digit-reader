@@ -34,16 +34,16 @@ The `/samples` folder contains sample images which can be used for testing.
 - <img src="screenshots/phone_ss.jpg" alt="drawing" width="200"/>
 # Contributions:
 
-- Andrei Vlăduț-Nicolae:
+- Vlăduț-Nicolae Andrei ([Vladutaki](https://github.com/Vladutaki)):
     - designed the webpage/ui
     - tested the functionality of the application
-- Alexandru Calciu:
+- Alexandru Calciu ([calex257](https://github.com/calex257)):
     - engineered the backend
     - helped with the implementation of the frontend
-- Claudiu Mogodeanu:
+- Claudiu Mogodeanu ([claudiu-mogo](https://github.com/claudiu-mogo)):
     - implemented and trained the neural network
     - processed the photos given as input
-- Andrei Petrea:
+- Andrei Petrea ([ReGeLePuMa](https://github.com/ReGeLePuMa)):
     - developed the frontend and added camera support
     - added the slideshow functionality
 
